@@ -79,12 +79,13 @@ function updateOrderTotal() {
     const orderTotalElement = document.getElementById('order-total');
     const totalPrice = currentOrder.length * 10; // Assuming each item costs $10
 
-    orderTotalElement.textContent = "R" + totalPrice.toFixed(2);
+    orderTotalElement.textContent = totalPrice.toFixed(2);
 }
 
 // Function to initialize the menu system
 function initMenuSystem(menu) {
     // Call the function to display menu items
+    displayMenuItems(menu);
 }
 
 // Start the menu system by calling the init function
