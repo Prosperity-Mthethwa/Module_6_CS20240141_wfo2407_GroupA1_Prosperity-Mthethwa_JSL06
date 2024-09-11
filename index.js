@@ -4,7 +4,7 @@ const menu = {
     MainCourses: ["Margherita Pizza", "Spaghetti Carbonara"],
     Desserts: ["Tiramisu", "Cheesecake"]
 };
-
+let currentOrder = []; // Array to store ordered items
 // Function to display menu items by category
 function displayMenuItems(menu) {
     const menuContainer = document.getElementById('menu');
@@ -45,6 +45,15 @@ function addToOrder(itemName) {
 
     const orderListItem = document.createElement('li');
     orderListItem.textContent = itemName;
+
+    // Add click event listener for removing items
+    orderListItem.addEventListener('click', () => {
+        removeFromOrder(itemName);
+    });
+
+    orderItemsList.appendChild(orderListItem);
+
+    updateOrderTotal();
 }
 
 // Function to initialize the menu system
