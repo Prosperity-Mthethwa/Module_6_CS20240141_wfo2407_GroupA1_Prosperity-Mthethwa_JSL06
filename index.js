@@ -41,6 +41,10 @@ function addToOrder(itemName) {
     const orderItemsList = document.getElementById('order-items');
     const orderTotalElement = document.getElementById('order-total');
 
+    currentOrder.push(itemName); // Add item to order array
+
+    const orderListItem = document.createElement('li');
+    orderListItem.textContent = itemName;
 }
 
 // Function to initialize the menu system
