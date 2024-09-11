@@ -56,6 +56,25 @@ function addToOrder(itemName) {
     updateOrderTotal();
 }
 
+function removeFromOrder(itemName) {
+    const orderItemsList = document.getElementById('order-items');
+    const orderTotalElement = document.getElementById('order-total');
+
+    const itemIndex = currentOrder.indexOf(itemName);
+    if (itemIndex !== -1) {
+        currentOrder.splice(itemIndex, 1); // Remove item from order array
+
+        for (let i = 0; i < orderItemsList.children.length; i++) {
+            if (orderItemsList.children[i].textContent === itemName) {
+                orderItemsList.removeChild(orderItemsList.children[i]);
+                break; // Remove only the first matching item
+            }
+        }
+
+        updateOrderTotal();
+    }
+}
+
 // Function to initialize the menu system
 function initMenuSystem(menu) {
     // Call the function to display menu items
