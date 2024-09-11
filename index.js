@@ -77,7 +77,7 @@ function removeFromOrder(itemName) {
 
 function updateOrderTotal() {
     const orderTotalElement = document.getElementById('order-total');
-    const totalPrice = currentOrder.length * 10; // Assuming each item costs $10
+    const totalPrice = currentOrder.length * 100; // Assuming each item costs $10
 
     orderTotalElement.textContent = totalPrice.toFixed(2);
 }
